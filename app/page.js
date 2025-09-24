@@ -12,33 +12,31 @@ export default function HeroSection() {
           backgroundSize: "cover",
           opacity: 1,
           width: "100%",
-          height: "600px", // Adjust height as needed
+          height: "720px",
           zIndex: -1,
         }}
       ></div>
 
-      {/* Bottom Wave Shape */}
+      {/* Dark Blue Gradient Overlay */}
       <div
-        className="absolute bottom-0 left-0 right-0"
+        className="absolute inset-0"
         style={{
-          background: "url('/assets/img/wave-shap.svg') no-repeat bottom center",
-          height: "100px",
+          background:
+            "linear-gradient(180deg, rgba(10,32,51,0.85) 0%, rgba(10,32,51,0.85) 40%, rgba(10,32,51,0.8) 70%, rgba(10,32,51,0.0) 100%)",
+          height: "720px",
+          zIndex: -1,
         }}
       ></div>
 
-      {/* Shape Effect */}
-      <div className="absolute top-0 left-0 opacity-100">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 361.1 384.8"
-          className="w-48 h-48 text-gray-800"
-        >
-          <path d="M53.1,266.7C19.3,178-41,79.1,41.6,50.1S287.7-59.6,293.8,77.5c6.1,137.1,137.8,238,15.6,288.9 S86.8,355.4,53.1,266.7z"></path>
+      {/* Bottom Wave (white) */}
+      <div className="pointer-events-none absolute left-0 right-0 bottom-0" style={{ zIndex: 1 }}>
+        <svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="block w-full h-[160px]">
+          <path d="M0,96 C240,192 480,0 720,48 C960,96 1200,208 1440,112 L1440,160 L0,160 Z" fill="#ffffff" fillOpacity="1"></path>
         </svg>
       </div>
 
       {/* Content Container */}
-      <div className="container mx-auto relative z-10 py-16">
+      <div className="container mx-auto relative z-10 py-16" style={{ minHeight: "720px" }}>
         <div className="flex flex-wrap items-center justify-between">
           {/* Left Side */}
           <div className="w-full md:w-1/2 mt-5 flex justify-center">
