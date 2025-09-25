@@ -57,6 +57,7 @@ export default function HeroSection() {
   }, []);
 
   return (
+<<<<<<< HEAD
     <>
       <nav className={`fixed top-0 left-0 w-full z-50 shadow-md transition-transform duration-300 ${scrolled ? '-translate-y-4 bg-white' : 'bg-transparent'}`}>
         <div className="max-w-6xl mx-auto px-2 py-2 flex items-center">
@@ -195,6 +196,51 @@ export default function HeroSection() {
             <div className="w-full md:w-1/2 pl-4">
               <p className="text-lg mb-6 font-poppins text-black">Dr. Chandrashekar D.P. serves as the CEO of Toddlers Early Years Centers (TEYC). A Ph.D. in Education from the University of Milan and alumnus of IIM Lucknow, Dr. Chandrashekar pioneered India’s first Whole-Brain School in collaboration with Dr. Kobus Neethling. His 22+ years of educational leadership are dedicated to optimizing cognitive power and fostering holistic child development.</p>
               <p className="text-lg mb-6 font-poppins text-black">Saviola Lobo is the Director of TEYC and a Cambridge-certified Early Years Specialist. With over 9 years of experience in early childhood initiatives, she spearheaded the “No More Screen Time” movement and played a key role in establishing the first Cambridge International Early Years Center in Hyderabad. A passionate advocate for children’s well-being, Saviola blends professional expertise with a personal commitment to mindful parenting.</p>
+=======
+    <section className="relative overflow-hidden" image-overlay="8">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "url('/assets/img/slider-bg-1.jpg') no-repeat center center",
+          backgroundSize: "cover",
+          opacity: 1,
+          width: "100%",
+          height: "720px",
+          zIndex: -1,
+        }}
+      ></div>
+
+      {/* Dark Blue Gradient Overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(10,32,51,0.85) 0%, rgba(10,32,51,0.85) 40%, rgba(10,32,51,0.8) 70%, rgba(10,32,51,0.0) 100%)",
+          height: "720px",
+          zIndex: -1,
+        }}
+      ></div>
+
+      {/* Bottom Wave (white) */}
+      <div className="pointer-events-none absolute left-0 right-0 bottom-0" style={{ zIndex: 1 }}>
+        <svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="block w-full h-[160px]">
+          <path d="M0,96 C240,192 480,0 720,48 C960,96 1200,208 1440,112 L1440,160 L0,160 Z" fill="#ffffff" fillOpacity="1"></path>
+        </svg>
+      </div>
+
+      {/* Content Container */}
+      <div className="container mx-auto relative z-10 py-16" style={{ minHeight: "720px" }}>
+        <div className="flex flex-wrap items-center justify-between">
+          {/* Left Side */}
+          <div className="w-full md:w-1/2 mt-5 flex justify-center">
+            <div className="img-wrap">
+              <img
+                src="/assets/img/modi-tweet.png"
+                alt="Modi Tweet"
+                className="max-w-full h-auto"
+              />
+>>>>>>> be852e9fb3de7dbd4dde847c63a15ace927f4e94
             </div>
           </div>
         </div>
