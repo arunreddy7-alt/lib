@@ -1,0 +1,4 @@
+- [x] Add flip card CSS animations to app/globals.css
+- [x] Modify review section in app/page.js to implement flip cards with front and back sides
+- [x] Update state management for card flipping instead of text expansion
+- [x] Test the flip animation and ensure responsiveness
