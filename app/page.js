@@ -14,25 +14,25 @@ export default function HeroSection() {
       name: "Shreya Yadav",
       rating: 5,
       date: "15 September 2025",
-      text: "As a practitioner who sees children daily, The Toddlers' Way spoke to me at a much more profound level than boundaries of motherhood. This book perfectly cross-connects scientific understanding with everyday practicality. PEARL philosophy—Play, Explore, and Learn—brought back memories of my teacher training and teaching curiosity when disciplining.\n\nThis book is unique in that it does more than childcare—it inspires parents and teachers to live consciously. A peaceful, emotionally balanced adult automatically makes a good environment for kids. I loved how the book takes everyday concerns such as mealtimes or bedtime and makes them a time of bonding, rather than conflict.\n\nThe writing style is approachable, the examples are relatable, and the encouragement feels genuine. Whether you’re a teacher, a parent, or even a grandparent, this book provides timeless lessons about empathy, patience, and awareness. The Panda metaphor is simple yet powerful—it teaches us that parenting isn’t about control but about guiding with love.\n\nI would highly endorse The Toddlers’ Way to parents but to anyone working with children. It is part parenting guide for toddlers and part self-care reminder when working with toddlers."
-    },
+      text: "As a practitioner who sees children daily, The Toddlers' Way spoke to me at a much more profound level than boundaries of motherhood. This book perfectly cross-connects scientific understanding with everyday practicality. PEARL philosophy—Play, Explore, and Learn—brought back memories of my teacher training."    
+      },
     {
       name: "Samridhi",
       rating: 4,
       date: "9 September 2025",
-      text: "The Toddlers’ Way is a thoughtful and reassuring guide for parents navigating the early years of childhood. What makes this book special is its ability to simplify complex ideas about development and present them in an easy, relatable way. Drawing inspiration from the calm nature of the panda, it encourages parents to embrace patience, gentleness, and mindful presence instead of chasing perfection. The book emphasizes how everyday routines—like eating, playing, or sleeping—can be turned into meaningful opportunities for growth when approached with awareness. Its evidence-based guidance is practical without being overwhelming, making it suitable for both new and experienced parents. More than just a parenting manual, it feels like a gentle companion, reminding families that love, connection, and consistency are the true foundations of a child’s early journey."
+      text: "The Toddlers’ Way is a thoughtful and reassuring guide for parents navigating the early years of childhood. What makes this book special is its ability to simplify complex ideas about development and present them in an easy, relatable way. Drawing inspiration from the calm nature of the panda."
     },
     {
       name: "Drish!!",
       rating: 5,
       date: "28 August 2025",
-      text: "The Toddlers’ Way felt like such a refreshing breath in the parenting space. Instead of throwing a hundred rules at you, it softly reminds you that parenting is really about connection, not perfection. The whole “panda” idea stayed with me—it instantly makes you think of patience, calmness, and nurture, which is exactly what parents need in those early years.\n\nWhat I loved most is how the book highlights the importance of the first 2000 days of a child’s life. It’s explained in such a simple, science-backed way that you don’t feel like you need a degree to understand it. The tips for everyday challenges—bedtime chaos, food struggles, meltdowns—are so practical and doable at home.\n\nThe best part? It doesn’t make you feel guilty. A lot of parenting books add pressure, but this one feels like a gentle friend saying—breathe, slow down, you’re doing enough. For parents who sometimes feel lost in the noise, this book offers calm, peace, and confidence."
+      text: "The Toddlers’ Way felt like such a refreshing breath in the parenting space. Instead of throwing a hundred rules at you, it softly reminds you that parenting is really about connection, not perfection. The whole “panda” idea stayed with me—it instantly makes you think of patience, calmness, and nurture."
     },
     {
       name: "S shetty",
       rating: 5,
       date: "27 August 2025",
-      text: "\"The Toddlers’ Way: A Panda’s Parenting Guide\" by Dr. Chandrashekar D. P. & Saviola Lobo offers a refreshing, research-backed approach to parenting toddlers, focusing on patience, empathy, and mindfulness. Using the metaphor of pandas, the authors guide parents through early childhood with warmth and calm, emphasizing connection over perfection. The book highlights practical tips for everyday challenges such as picky eating and bedtime routines, blending scientific insights with relatable stories that reassure rather than instruct. It makes complex research approachable, showing parents they’re not alone in the messy whirlwind of toddlerhood. The book advices for mindful parenting, stressing the importance of nurturing both the child’s and parent’s mental health. The inclusion of sample routines, diet plans, and milestone charts makes it especially helpful for new parents. This book is highly recommended for those seeking a more joyful, less stressful parenting experience."
+      text: "\"The Toddlers’ Way: A Panda’s Parenting Guide\" by Dr. Chandrashekar D. P. & Saviola Lobo offers a refreshing, research-backed approach to parenting toddlers, focusing on patience, empathy, and mindfulness. Using the metaphor of pandas, the authors guide parents through early childhood with warmth and calm."
     },
     {
       name: "Bibliophile",
@@ -62,13 +62,14 @@ export default function HeroSection() {
         <div className="max-w-6xl mx-auto px-2 py-2 flex items-center">
           {/* Logo shifted slightly left */}
           <div className={`h-20 flex items-center mr-18 -ml-26 transition-filter duration-300 ${scrolled ? 'filter brightness-0 invert-0' : 'filter brightness-0 invert'}`}>
-            <span className="text-xl font-bold">Panda’s Wisdom</span>
+            <span className="text-xl font-bold">Logo</span>
           </div>
           {/* Desktop Links */}
           <div className={`hidden md:flex gap-12 ml-auto transition-colors duration-300 ${scrolled ? 'text-[#394b35]' : 'text-[#FFFFFF]'}`}>
             <a href="#home" className="hover:text-[#394b35] transition">Home</a>
             <a href="#about" className="hover:text-[#394b35] transition">About</a>
-            <a href="#book" className="hover:text-[#394b35] transition">Book</a>
+            <a href="#authors" className="hover:text-[#394b35] transition">Authors</a>
+            <a href="#gallery" className="hover:text-[#394b35] transition">Gallery</a>
             <a href="#reviews" className="hover:text-[#394b35] transition">Reviews</a>
             <a href="#contact" className="hover:text-[#394b35] transition">Contact</a>
           </div>
@@ -85,16 +86,16 @@ export default function HeroSection() {
         {/* Mobile Menu */}
         {menuOpen && (
           <div className="md:hidden bg-transparent px-6 py-4 flex flex-col gap-4 text-white">
-            <a href="#home" className="hover:text-white" onClick={() => setMenuOpen(false)}>Home</a>
-            <a href="#about" className="hover:text-white" onClick={() => setMenuOpen(false)}>About</a>
-            <a href="#book" className="hover:text-white" onClick={() => setMenuOpen(false)}>Book</a>
-            <a href="#reviews" className="hover:text-white" onClick={() => setMenuOpen(false)}>Reviews</a>
-            <a href="#contact" className="hover:text-white" onClick={() => setMenuOpen(false)}>Contact</a>
+            <a href="#home" className="hover:text-white" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#home'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Home</a>
+            <a href="#about" className="hover:text-white" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#about'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>About</a>
+            <a href="#gallery" className="hover:text-white" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#gallery'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Gallery</a>
+            <a href="#reviews" className="hover:text-white" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#reviews'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Reviews</a>
+            <a href="#contact" className="hover:text-white" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#contact'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Contact</a>
           </div>
         )}
       </nav>
 
-      <section className="relative" image-overlay="8">
+      <section id="home" className="relative" image-overlay="8">
         {/* Hero Hero Part */}
         <div className="relative h-[800px]">
           {/* Background Image */}
@@ -105,7 +106,7 @@ export default function HeroSection() {
               backgroundSize: "cover",
               opacity: 1,
               width: "100%",
-              height: "720px",
+              height: "100%",
               zIndex: -1,
             }}
           ></div>
@@ -116,7 +117,7 @@ export default function HeroSection() {
             style={{
               background:
                 "linear-gradient(180deg, rgba(229,230,208,0.6) 10%, rgba(229,230,208,0.6) 40%, rgba(229,230,208,0.5) 70%, rgba(229,230,208,0.0) 100%)",
-              height: "720px",
+              height: "100%",
               zIndex: -1,
             }}
           ></div>
@@ -165,7 +166,7 @@ export default function HeroSection() {
         </div>
       </section>
       {/*about us*/}
-      <section id="about" className="py-16 bg-gray-50">
+      <section id="about" className="py-16 bg-gray-50 -mt-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <h1 className="text-8xl md:text-6xl font-bold mb-4 text-[#394b35] font-poppins">The Toddlers’ Way: Your Parenting Compass</h1>
@@ -201,7 +202,7 @@ export default function HeroSection() {
       </section>
 
       {/* Glimpses from the Launch */}
-      <section id="launch" className="py-16 bg-white">
+      <section id="gallery" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <h1 className="text-8xl md:text-6xl font-bold mb-4 text-[#394b35] font-poppins">Glimpses from the Launch</h1>
@@ -277,27 +278,19 @@ export default function HeroSection() {
                       <p className="text-base font-poppins text-black mb-4 flex-grow overflow-hidden">
                         {truncatedText}
                       </p>
-                      <button className="text-[#394b35] font-semibold underline text-sm self-end">Read More</button>
                     </div>
                     <div className="flip-card-back">
-                      <div className="flex items-center mb-2">
-                        <h3 className="text-lg font-semibold font-poppins text-black flex-grow">{review.name}</h3>
-                        <div className="flex ml-auto">
-                          {[...Array(5)].map((_, i) => (
-                            <IoStar
-                              key={i}
-                              className={`text-sm ${i < review.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
-                            />
-                          ))}
-                        </div>
+                      <div className="flex flex-col justify-center items-center h-full p-4">
+                        <h3 className="text-xl font-bold text-[#394b35] mb-4 text-center">Inspired? Get Your Copy!</h3>
+                        <a
+                          href="https://www.amazon.in/dp/9349999366"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-[#fafbe5]/70 text-black text-lg font-semibold py-4 px-6 rounded-lg shadow-lg hover:bg-[#f0f1e0]/70 transition duration-300"
+                        >
+                          🛒 Buy on Amazon
+                        </a>
                       </div>
-                      <p className="text-sm text-gray-500 mb-2">Reviewed on {review.date}</p>
-                      <p className="text-base font-poppins text-black mb-4 flex-grow overflow-y-auto">
-                        {review.text}
-                      </p>
-                      <button className="text-[#394b35] font-semibold underline text-sm self-end" onClick={(e) => { e.stopPropagation(); setExpanded(null); }}>
-                        Read Less
-                      </button>
                     </div>
                   </div>
                 </div>
@@ -306,6 +299,96 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
+
+      {/* Call to Action Section */}
+      <section id="contact" className="py-16 bg-[#e5e6d0]">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap items-center">
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#394b35] font-poppins">Your Parenting Journey Starts Here</h2>
+              <p className="text-lg md:text-xl mb-8 text-black font-poppins">Build a strong, connected foundation for your child’s future - one mindful moment at a time.</p>
+              <a
+                href="https://www.amazon.in/dp/9349999366"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#fafbe5]/70 text-black text-xl font-bold py-6 px-8 rounded-lg shadow-lg hover:bg-[#f0f1e0]/70 transition duration-300 inline-block"
+              >
+                📚 Buy on Amazon Now
+              </a>
+            </div>
+            <div className="w-full md:w-1/2 mt-8 md:mt-0">
+              <h3 className="text-2xl font-bold mb-4 text-[#394b35] font-poppins">Bulk Purchase for Organizations</h3>
+              <p className="text-base mb-6 text-black font-poppins">Looking to empower a larger community of parents, educators, or organizations? The Toddlers’ Way: A Panda’s Parenting Guide is available for bulk purchases!</p>
+              <p className="text-sm mb-4 text-black font-poppins">Upto 10 copies - Rs. 469 / copy. Above 10 copies - Rs 400 / copy</p>
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <h4 className="text-lg font-semibold mb-4 text-[#394b35] font-poppins">Place Your Order</h4>
+                <form className="space-y-4">
+                  <input type="text" placeholder="Name" className="w-full p-3 border border-gray-300 rounded-lg text-black" required />
+                  <input type="tel" placeholder="Phone number" className="w-full p-3 border border-gray-300 rounded-lg text-black" required />
+                  <input type="email" placeholder="Email" className="w-full p-3 border border-gray-300 rounded-lg text-black" required />
+                  <input type="text" placeholder="Organization" className="w-full p-3 border border-gray-300 rounded-lg text-black" required />
+                  <input type="text" placeholder="Designation" className="w-full p-3 border border-gray-300 rounded-lg text-black" required />
+                  <input type="number" placeholder="Number of copies" className="w-full p-3 border border-gray-300 rounded-lg text-black" min="1" required />
+                  <textarea placeholder="Shipping address" className="w-full p-3 border border-gray-300 rounded-lg text-black" rows="3" required></textarea>
+                  <button type="submit" className="w-full bg-[#394b35] text-white text-lg font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-[#2d3a2a] transition duration-300">
+                    Confirm / Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-[#394b35] text-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Social Links */}
+            <div>
+              <h3 className="text-xl font-bold mb-4">Follow Us</h3>
+              <div className="space-y-2">
+                <a href="#" className="block hover:text-[#e5e6d0] transition">Instagram</a>
+                <a href="https://www.amazon.in/dp/9349999366" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition">Amazon</a>
+              </div>
+            </div>
+            {/* News Links */}
+            <div>
+              <h3 className="text-xl font-bold mb-4">In the News</h3>
+              <div className="space-y-2">
+                <a href="https://ardorcomm-media.com/the-toddlers-way-a-pandas-parenting-guide-by-dr-chandrashekar-and-mrs-saviola-lobo-launched-in-hyderabad/" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-sm">ArdorComm Media</a>
+                <a href="https://indiglobalmedia.com/the-toddlers-way-a-pandas-parenting-guide-launched-in-hyderabad-sparks-dialogue-on-nurturing-future-leaders/" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-sm">IndiGlobal Media</a>
+                <a href="https://youtube.com/shorts/o53y40jOf4g?si=wLwF0oFq4WBExEwf" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-sm">YouTube</a>
+                <a href="https://x.com/IndiglobalMedia/status/1963118838691610891" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-sm">X (Twitter)</a>
+              </div>
+            </div>
+            {/* Contact Info */}
+            <div>
+              <h3 className="text-xl font-bold mb-4">Contact Us</h3>
+              <div className="space-y-2">
+                <p>📞 Phone: +91 12345 67890</p>
+                <p>✉️ Email: info@pandaswisdom.com</p>
+                <p>📍 Address: Hyderabad, India</p>
+              </div>
+            </div>
+            {/* Reach Out Form */}
+            <div>
+              <h3 className="text-xl font-bold mb-4">Reach Out</h3>
+              <form className="space-y-4">
+                <input type="text" placeholder="Name" className="w-full p-2 border border-gray-300 rounded text-white" required />
+                <input type="email" placeholder="Email" className="w-full p-2 border border-gray-300 rounded text-white" required />
+                <textarea placeholder="Message" className="w-full p-2 border border-gray-300 rounded text-white" rows="3" required></textarea>
+                <button type="submit" className="w-full bg-[#e5e6d0] text-[#394b35] font-bold py-2 px-4 rounded hover:bg-[#d4d5c0] transition">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+          <div className="text-center mt-8 border-t border-[#e5e6d0] pt-8">
+            <p>&copy; 2025 The Toddlers’ Way. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
 
     </>
   );
