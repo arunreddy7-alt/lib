@@ -162,7 +162,7 @@ export default function HeroSection() {
         </div>
       </section>
       {/*about us*/}
-      <section id="about" className="py-8 md:py-16 bg-gray-50 mt-16 md:-mt-10">
+      <section id="about" className="py-8 md:py-16 bg-gray-50 -mt-0 md:-mt-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-6 md:mb-8">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#394b35] font-poppins leading-tight">The Toddlers' Way: Your Parenting Compass</h1>
