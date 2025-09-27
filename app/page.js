@@ -100,22 +100,21 @@ export default function HeroSection() {
       <section id="home" className="relative">
         {/* Hero Section */}
         <div className="relative h-[700px] md:h-[900px]">
-          {/* Background Image */}
+          {/* Background Image - Fill till wave */}
           <div
-            className="absolute inset-0"
+            className="absolute top-0 left-0 right-0"
             style={{
               background: "url('/assets/img/slider-bg-1.jpg') no-repeat center center",
               backgroundSize: "cover",
               opacity: 1,
-              width: "100%",
-              height: "100%",
+              height: "calc(100% - 40px)",
               zIndex: -1,
             }}
           ></div>
 
           {/* Light Beige Gradient Overlay */}
           <div
-            className="absolute inset-0"
+            className="absolute inset-0 bg-white md:bg-transparent"
             style={{
               background:
                 "linear-gradient(180deg, rgba(229,230,208,0.6) 10%, rgba(229,230,208,0.6) 40%, rgba(229,230,208,0.5) 70%, rgba(229,230,208,0.0) 100%)",
