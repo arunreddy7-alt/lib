@@ -222,22 +222,39 @@ export default function HeroSection() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: <IoNewspaperOutline className="inline mr-2 text-lg" />, text: "ArdorComm Media – Launch Coverage", link: "https://ardorcomm-media.com/the-toddlers-way-a-pandas-parenting-guide-by-dr-chandrashekar-and-mrs-saviola-lobo-launched-in-hyderabad/" },
-              { icon: <IoNewspaperOutline className="inline mr-2 text-lg" />, text: "IndiGlobal Media – Future Leaders Dialogue", link: "https://indiglobalmedia.com/the-toddlers-way-a-pandas-parenting-guide-launched-in-hyderabad-sparks-dialogue-on-nurturing-future-leaders/" },
-              { icon: <BsCameraVideo className="inline mr-2 text-lg" />, text: "YouTube – Book Launch Clip", link: "https://youtube.com/shorts/o53y40jOf4g?si=wLwF0oFq4WBExEwf" },
-              { icon: <IoMegaphoneOutline className="inline mr-2 text-lg" />, text: "X (Twitter) Coverage", link: "https://x.com/IndiglobalMedia/status/1963118838691610891" },
-              { icon: <IoPhonePortrait className="inline mr-2 text-lg" />, text: "Facebook Post", link: "https://www.facebook.com/share/p/1DE3B3GsbM/" },
-              { icon: <IoBriefcase className="inline mr-2 text-lg" />, text: "LinkedIn Article", link: "https://www.linkedin.com/posts/indiglobal-media-network_the-toddlers-way-a-pandas-parenting-guide-activity-7368877820741091330-5z-R?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAFjUAOEB6PYKyVCkYiIelnyYnayO8788zB4&utm_campaign=whatsapp" }
+              { icon: <IoNewspaperOutline className="inline mr-2 text-lg" />, text: "ArdorComm Media – Launch Coverage", link: "https://ardorcomm-media.com/the-toddlers-way-a-pandas-parenting-guide-by-dr-chandrashekar-and-mrs-saviola-lobo-launched-in-hyderabad/", image: "/assets/img/news1.jpg" },
+              { icon: <IoNewspaperOutline className="inline mr-2 text-lg" />, text: "IndiGlobal Media – Future Leaders Dialogue", link: "https://indiglobalmedia.com/the-toddlers-way-a-pandas-parenting-guide-launched-in-hyderabad-sparks-dialogue-on-nurturing-future-leaders/", image: "/assets/img/news2.jpg" },
+              { icon: <BsCameraVideo className="inline mr-2 text-lg" />, text: "YouTube – Book Launch Clip", link: "https://youtube.com/shorts/o53y40jOf4g?si=wLwF0oFq4WBExEwf", image: "/assets/img/news3.jpg" },
+              { icon: <IoMegaphoneOutline className="inline mr-2 text-lg text-black" />, text: "X (Twitter) Coverage", link: "https://x.com/IndiglobalMedia/status/1963118838691610891", image: "/assets/img/news4.jpg" },
+              { icon: <IoPhonePortrait className="inline mr-2 text-lg" />, text: "Facebook Post", link: "https://www.facebook.com/share/p/1DE3B3GsbM/", image: "/assets/img/news5.jpg" },
+              { icon: <IoBriefcase className="inline mr-2 text-lg" />, text: "LinkedIn Article", link: "https://www.linkedin.com/posts/indiglobal-media-network_the-toddlers-way-a-pandas-parenting-guide-activity-7368877820741091330-5z-R?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAFjUAOEB6PYKyVCkYiIelnyYnayO8788zB4&utm_campaign=whatsapp", image: "/assets/img/news6.jpg" }
             ].map((item, index) => (
               <a
                 key={index}
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer block opacity-0 animate-fade-in-up"
+                className="bg-white rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer block opacity-0 animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <p className="text-lg font-poppins text-black">{item.icon} {item.text}</p>
+                {item.text === "X (Twitter) Coverage" ? (
+                  <div className="bg-white rounded-t-lg p-2 mb-4 mt-4">
+                    <img
+                      src={item.image}
+                      alt={item.text}
+                      className="w-full h-40 object-contain"
+                    />
+                  </div>
+                ) : (
+                  <img
+                    src={item.image}
+                    alt={item.text}
+                    className="w-full h-40 object-contain rounded-t-lg mb-4 mt-4"
+                  />
+                )}
+                <div className="p-8">
+                  <p className="text-lg font-poppins text-black">{item.icon} {item.text}</p>
+                </div>
               </a>
             ))}
           </div>
@@ -305,6 +322,11 @@ export default function HeroSection() {
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap items-center">
             <div className="w-full md:w-1/2 text-center md:text-left">
+              <img
+                src="/assets/img/contact.jpg"
+                alt="Parenting Journey"
+                className="w-full h-80 object-contain rounded-lg mb-4 -ml-25 -mt-3"
+              />
               <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#394b35] font-poppins">Your Parenting Journey Starts Here</h2>
               <p className="text-lg md:text-xl mb-8 text-black font-poppins">Build a strong, connected foundation for your child’s future - one mindful moment at a time.</p>
               <a
@@ -406,45 +428,48 @@ function ImageSlider() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const numVisible = 3;
+  const allImages = [...images, ...images]; // Duplicate for seamless loop
+  const totalPositions = allImages.length;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 3) % images.length);
-    }, 3000); // Change every 3 seconds
+      setCurrentIndex((prev) => (prev + 1) % totalPositions);
+    }, 3000); // Auto slide by 1 every 3 seconds
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [totalPositions]);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 3) % images.length);
+    setCurrentIndex((prev) => (prev + 1) % totalPositions);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 3 + images.length) % images.length);
+    setCurrentIndex((prev) => (prev - 1 + totalPositions) % totalPositions);
   };
 
-  const visibleImages = [];
-  for (let i = 0; i < 3; i++) {
-    visibleImages.push(images[(currentIndex + i) % images.length]);
-  }
+  const slideWidth = 100 / numVisible;
 
   return (
     <div className="relative w-full max-w-6xl mx-auto overflow-hidden">
       <div
-        className="flex transition-transform duration-1000 ease-in-out"
-        style={{ width: '200%', transform: `translateX(-${(currentIndex / 3) * 100}%)` }}
+        className="flex gap-4 transition-transform duration-1000 ease-in-out"
+        style={{
+          width: `${allImages.length * slideWidth}%`,
+          transform: `translateX(-${currentIndex * slideWidth}%)`
+        }}
       >
-        {images.concat(images.slice(0, 3)).map((src, index) => (
-          <img
+        {allImages.map((src, index) => (
+          <div
             key={index}
-            src={src}
-            alt={`Launch Image ${index + 1}`}
-            className={`w-1/3 h-96 md:h-[600px] object-cover rounded-lg ${
-              index % 3 === 1
-                ? 'scale-110 shadow-2xl'
-                : 'scale-90 shadow-lg opacity-70'
-            } transition-all duration-1000 ease-in-out`}
-          />
+            className="flex-1 aspect-square bg-white rounded-lg shadow-md overflow-hidden"
+          >
+            <img
+              src={src}
+              alt={`Launch Image ${index + 1}`}
+              className="w-full h-full object-cover transition-all duration-1000 ease-in-out"
+            />
+          </div>
         ))}
       </div>
       <button
