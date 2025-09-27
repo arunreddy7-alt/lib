@@ -107,7 +107,7 @@ export default function HeroSection() {
               background: "url('/assets/img/slider-bg-1.jpg') no-repeat center center",
               backgroundSize: "cover",
               opacity: 1,
-              height: "100%",
+              height: "calc(100% - 40px)",
               zIndex: -1,
             }}
           ></div>
@@ -117,15 +117,15 @@ export default function HeroSection() {
             className="absolute inset-0 bg-white md:bg-transparent"
             style={{
               background:
-                "linear-gradient(180deg, rgba(229,230,208,0.6) 10%, rgba(229,230,208,0.6) 40%, rgba(229,230,208,0.5) 70%, rgba(229,230,208,0.5) 100%)",
+                "linear-gradient(180deg, rgba(229,230,208,0.6) 10%, rgba(229,230,208,0.6) 40%, rgba(229,230,208,0.5) 70%, rgba(229,230,208,0.0) 100%)",
               height: "100%",
               zIndex: -1,
             }}
           ></div>
 
           {/* Bottom Wave (white) */}
-          <div className="pointer-events-none absolute left-0 right-0 bottom-0" style={{ zIndex: 1 }}>
-            <svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="block w-full h-[100px] md:h-[200px]">
+          <div className="pointer-events-none absolute left-0 right-0 bottom-10" style={{ zIndex: 1 }}>
+            <svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="block w-full h-[80px] md:h-[160px]">
             <path d="M0,120 C360,0 1080,260 1440,80 L1440,300 L0,300 Z" fill="#ffffff" fillOpacity="1" stroke="rgba(229,230,208,0.8)" strokeWidth="19"></path>
             </svg>
           </div>
@@ -321,7 +321,7 @@ export default function HeroSection() {
               <img
                 src="/assets/img/contact.jpg"
                 alt="Parenting Journey"
-                className="w-full max-w-[150px] md:max-w-[300px] h-auto object-contain rounded-lg mb-4 mx-auto md:mx-0"
+                className="w-full max-w-[200px] md:max-w-[400px] h-auto object-contain rounded-lg mb-4 mx-auto md:mx-0"
               />
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-[#394b35] font-poppins leading-tight">Your Parenting Journey Starts Here</h2>
               <p className="text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-black font-poppins leading-relaxed">Build a strong, connected foundation for your child's future - one mindful moment at a time.</p>
@@ -476,4 +476,4 @@ function ImageSlider() {
       </button>
     </div>
   );
-}npm
+}
