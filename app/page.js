@@ -59,13 +59,14 @@ export default function HeroSection() {
   return (
     <>
       <nav className={`fixed top-0 left-0 w-full z-50 shadow-md transition-transform duration-300 ${scrolled ? '-translate-y-4 bg-white' : 'bg-transparent'}`}>
-        <div className="max-w-6xl mx-auto px-2 py-2 flex items-center">
-          {/* Logo shifted slightly left */}
-          <div className={`h-20 flex items-center mr-18 -ml-26 transition-filter duration-300 ${scrolled ? 'filter brightness-0 invert-0' : 'filter brightness-0 invert'}`}>
-            <span className="text-xl font-bold">Logo</span>
+        <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
+          {/* Logo */}
+          <div className={`h-16 md:h-20 flex items-center transition-filter duration-300 ${scrolled ? 'filter brightness-0 invert-0' : 'filter brightness-0 invert'}`}>
+            <span className="text-lg md:text-xl font-bold">Logo</span>
           </div>
+          
           {/* Desktop Links */}
-          <div className={`hidden md:flex gap-12 ml-auto transition-colors duration-300 ${scrolled ? 'text-[#394b35]' : 'text-[#FFFFFF]'}`}>
+          <div className={`hidden md:flex gap-8 lg:gap-12 transition-colors duration-300 ${scrolled ? 'text-[#394b35]' : 'text-[#FFFFFF]'}`}>
             <a href="#home" className="hover:text-[#394b35] transition">Home</a>
             <a href="#about" className="hover:text-[#394b35] transition">About</a>
             <a href="#authors" className="hover:text-[#394b35] transition">Authors</a>
@@ -76,7 +77,7 @@ export default function HeroSection() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white focus:outline-none ml-auto"
+            className="md:hidden text-white focus:outline-none p-2"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? "✕" : "☰"}
@@ -85,19 +86,20 @@ export default function HeroSection() {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="md:hidden bg-transparent px-6 py-4 flex flex-col gap-4 text-white">
-            <a href="#home" className="hover:text-white" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#home'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Home</a>
-            <a href="#about" className="hover:text-white" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#about'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>About</a>
-            <a href="#gallery" className="hover:text-white" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#gallery'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Gallery</a>
-            <a href="#reviews" className="hover:text-white" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#reviews'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Reviews</a>
-            <a href="#contact" className="hover:text-white" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#contact'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Contact</a>
+          <div className="md:hidden bg-white/95 backdrop-blur-sm px-6 py-4 flex flex-col gap-4 text-[#394b35] shadow-lg">
+            <a href="#home" className="hover:text-[#394b35] py-2" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#home'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Home</a>
+            <a href="#about" className="hover:text-[#394b35] py-2" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#about'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>About</a>
+            <a href="#authors" className="hover:text-[#394b35] py-2" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#authors'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Authors</a>
+            <a href="#gallery" className="hover:text-[#394b35] py-2" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#gallery'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Gallery</a>
+            <a href="#reviews" className="hover:text-[#394b35] py-2" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#reviews'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Reviews</a>
+            <a href="#contact" className="hover:text-[#394b35] py-2" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#contact'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Contact</a>
           </div>
         )}
       </nav>
 
-      <section id="home" className="relative" image-overlay="8">
-        {/* Hero Hero Part */}
-        <div className="relative h-[800px]">
+      <section id="home" className="relative">
+        {/* Hero Section */}
+        <div className="relative h-[700px] md:h-[900px]">
           {/* Background Image */}
           <div
             className="absolute inset-0"
@@ -124,103 +126,98 @@ export default function HeroSection() {
 
           {/* Bottom Wave (white) */}
           <div className="pointer-events-none absolute left-0 right-0 bottom-10" style={{ zIndex: 1 }}>
-            <svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="block w-full h-[160px]">
+            <svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="block w-full h-[80px] md:h-[160px]">
             <path d="M0,120 C360,0 1080,260 1440,80 L1440,300 L0,300 Z" fill="#ffffff" fillOpacity="1" stroke="rgba(229,230,208,0.8)" strokeWidth="19"></path>
             </svg>
           </div>
 
           {/* Content Container */}
-          <div className="container mx-auto relative z-10 py-16" style={{ minHeight: "720px" }}>
-            <div className="flex flex-wrap items-center justify-between">
+          <div className="container mx-auto relative z-10 pt-64 md:pt-64 pb-12 md:pb-20 px-4">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               {/* Left Side */}
-              <div className="w-full md:w-1/2 mt-30 flex flex-col justify-center text-center text-[#394b35]">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                  “Discover the Panda’s Wisdom for Peaceful Parenting”
+              <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left text-[#394b35]">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+                  "Discover the Panda's Wisdom for Peaceful Parenting"
                 </h1>
-                <p className="text-lg md:text-xl mb-6">
-                  An evidence-based roadmap to nurture your child’s first 2000 days with mindfulness, connection, and love.
+                <p className="text-base sm:text-lg md:text-xl mb-6 leading-relaxed">
+                  An evidence-based roadmap to nurture your child's first 2000 days with mindfulness, connection, and love.
                 </p>
                 <a
                   href="https://www.amazon.in/dp/9349999366"
-                  className="bg-[#fafbe5]/70 text-black text-sm font-semibold py-3 px-0 rounded-lg shadow-lg hover:bg-[#f0f1e0]/70 transition duration-300"
+                  className="bg-[#fafbe5]/70 text-black text-sm font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-[#f0f1e0]/70 transition duration-300 inline-block"
                 >
                   🛒 Get Your Copy on Amazon
                 </a>
               </div>
 
               {/* Right Side */}
-              <div className="w-full md:w-2/4 text-center text-white mt-15 md:mt-40 -ml-8 md:-ml-20 translate-x-9 -translate-y-8">
-                  <a
-                  href="https://www.amazon.in/dp/1638325804/ref=cm_sw_r_wa_api_glc_fabc_JY3VMDFPZ8SSB3D7YAQH"
-                  target="_blank"
-                >
-                  <img
-                    src="/assets/img/book.jpg"
-                    alt="Book"
-                    className="mx-0 shadow-lg w-[800px] h-auto"
-                  />
-                </a>
+              <div className="w-full md:w-2/4 text-center">
+                <img
+                  src="/assets/img/book.jpg"
+                  alt="Book"
+                  className="mx-auto shadow-lg w-full max-w-[300px] md:max-w-[400px] lg:max-w-[500px] h-auto"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
       {/*about us*/}
-      <section id="about" className="py-16 bg-gray-50 -mt-10">
+      <section id="about" className="py-8 md:py-16 bg-gray-50 mt-16 md:-mt-10">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h1 className="text-8xl md:text-6xl font-bold mb-4 text-[#394b35] font-poppins">The Toddlers’ Way: Your Parenting Compass</h1>
+          <div className="text-center mb-6 md:mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#394b35] font-poppins leading-tight">The Toddlers' Way: Your Parenting Compass</h1>
           </div>
-          <div className="flex flex-wrap items-center">
-            <div className="w-full md:w-1/2 pr-4">
-              <p className="text-lg mb-6 font-poppins text-black">Modern parenting can feel overwhelming, with endless advice and constant self-doubt. The Toddlers’ Way: A Panda’s Parenting Guide offers a simple, evidence-based roadmap for your child’s first 2000 days - the most crucial years for brain growth.</p>
-              <p className="text-lg mb-6 font-poppins text-black">Inspired by the calm wisdom of the panda, this book provides practical strategies to build a secure, loving foundation, turn everyday moments into growth opportunities, and navigate challenges from picky eating to bedtime battles.</p>
-              <p className="text-lg mb-6 font-poppins text-black">Stop striving for perfection; embrace mindful parenting for a happier family life and a lasting legacy of love.</p>
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+            <div className="w-full md:w-1/2 order-2 md:order-1">
+              <p className="text-base md:text-lg mb-4 md:mb-6 font-poppins text-black leading-relaxed">Modern parenting can feel overwhelming, with endless advice and constant self-doubt. The Toddlers' Way: A Panda's Parenting Guide offers a simple, evidence-based roadmap for your child's first 2000 days - the most crucial years for brain growth.</p>
+              <p className="text-base md:text-lg mb-4 md:mb-6 font-poppins text-black leading-relaxed">Inspired by the calm wisdom of the panda, this book provides practical strategies to build a secure, loving foundation, turn everyday moments into growth opportunities, and navigate challenges from picky eating to bedtime battles.</p>
+              <p className="text-base md:text-lg mb-4 md:mb-6 font-poppins text-black leading-relaxed">Stop striving for perfection; embrace mindful parenting for a happier family life and a lasting legacy of love.</p>
             </div>
-            <div className="w-full md:w-1/2 text-center">
-              <img src="/assets/img/about.jpg" alt="Book" className="mx-auto rounded-lg shadow-lg w-86 h-auto mt-3" />
+            <div className="w-full md:w-1/2 text-center order-1 md:order-2">
+              <img src="/assets/img/about.jpg" alt="Book" className="mx-auto rounded-lg shadow-lg w-full max-w-[300px] md:max-w-[400px] h-auto" />
             </div>
           </div>
         </div>
       </section>
        {/*authors*/}
-      <section id="authors" className="py-16 bg-[#e5e6d0]">
+      <section id="authors" className="py-8 md:py-16 bg-[#e5e6d0]">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h1 className="text-8xl md:text-6xl font-bold mb-4 text-[#394b35] font-poppins">Meet the Authors</h1>
+          <div className="text-center mb-6 md:mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#394b35] font-poppins leading-tight">Meet the Authors</h1>
           </div>
-          <div className="flex flex-wrap items-center">
-            <div className="w-full md:w-3/6 text-center">
-              <img src="/assets/img/author1.jpg" alt="Dr. Chandrashekar D.P." className="mx-auto -translate-x-4 -translate-y-0 shadow-lg w-full h-104 object-cover rounded-lg mb-4" />
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+            <div className="w-full md:w-3/6 text-center order-1">
+              <img src="/assets/img/author1.jpg" alt="Dr. Chandrashekar D.P." className="mx-auto shadow-lg w-full max-w-[300px] md:max-w-[400px] aspect-square object-cover rounded-lg mb-4" />
             </div>
-            <div className="w-full md:w-1/2 pl-4">
-              <p className="text-lg mb-6 font-poppins text-black">Dr. Chandrashekar D.P. serves as the CEO of Toddlers Early Years Centers (TEYC). A Ph.D. in Education from the University of Milan and alumnus of IIM Lucknow, Dr. Chandrashekar pioneered India’s first Whole-Brain School in collaboration with Dr. Kobus Neethling. His 22+ years of educational leadership are dedicated to optimizing cognitive power and fostering holistic child development.</p>
-              <p className="text-lg mb-6 font-poppins text-black">Saviola Lobo is the Director of TEYC and a Cambridge-certified Early Years Specialist. With over 9 years of experience in early childhood initiatives, she spearheaded the “No More Screen Time” movement and played a key role in establishing the first Cambridge International Early Years Center in Hyderabad. A passionate advocate for children’s well-being, Saviola blends professional expertise with a personal commitment to mindful parenting.</p>
+            <div className="w-full md:w-1/2 order-2">
+              <p className="text-base md:text-lg mb-4 md:mb-6 font-poppins text-black leading-relaxed">Dr. Chandrashekar D.P. serves as the CEO of Toddlers Early Years Centers (TEYC). A Ph.D. in Education from the University of Milan and alumnus of IIM Lucknow, Dr. Chandrashekar pioneered India's first Whole-Brain School in collaboration with Dr. Kobus Neethling. His 22+ years of educational leadership are dedicated to optimizing cognitive power and fostering holistic child development.</p>
+              <p className="text-base md:text-lg mb-4 md:mb-6 font-poppins text-black leading-relaxed">Saviola Lobo is the Director of TEYC and a Cambridge-certified Early Years Specialist. With over 9 years of experience in early childhood initiatives, she spearheaded the "No More Screen Time" movement and played a key role in establishing the first Cambridge International Early Years Center in Hyderabad. A passionate advocate for children's well-being, Saviola blends professional expertise with a personal commitment to mindful parenting.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Glimpses from the Launch */}
-      <section id="gallery" className="py-16 bg-white">
+      <section id="gallery" className="py-8 md:py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h1 className="text-8xl md:text-6xl font-bold mb-4 text-[#394b35] font-poppins">Glimpses from the Launch</h1>
-            <p className="text-lg mb-6 font-poppins text-black">Celebrating the launch of The Toddlers’ Way with parents, educators, and thought leaders!</p>
+          <div className="text-center mb-6 md:mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#394b35] font-poppins leading-tight">Glimpses from the Launch</h1>
+            <p className="text-base md:text-lg mb-6 font-poppins text-black">Celebrating the launch of The Toddlers' Way with parents, educators, and thought leaders!</p>
           </div>
-          <div className="flex justify-center mt-18">
+          <div className="flex justify-center">
             <ImageSlider />
           </div>
         </div>
       </section>
 
       {/* In the News */}
-      <section id="news" className="py-16 bg-[#e5e6d0]">
+      <section id="news" className="py-8 md:py-16 bg-[#e5e6d0]">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h1 className="text-8xl md:text-6xl font-bold mb-4 text-[#394b35] font-poppins">In the News</h1>
+          <div className="text-center mb-6 md:mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#394b35] font-poppins leading-tight">In the News</h1>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {[
               { icon: <IoNewspaperOutline className="inline mr-2 text-lg" />, text: "ArdorComm Media – Launch Coverage", link: "https://ardorcomm-media.com/the-toddlers-way-a-pandas-parenting-guide-by-dr-chandrashekar-and-mrs-saviola-lobo-launched-in-hyderabad/", image: "/assets/img/news1.jpg" },
               { icon: <IoNewspaperOutline className="inline mr-2 text-lg" />, text: "IndiGlobal Media – Future Leaders Dialogue", link: "https://indiglobalmedia.com/the-toddlers-way-a-pandas-parenting-guide-launched-in-hyderabad-sparks-dialogue-on-nurturing-future-leaders/", image: "/assets/img/news2.jpg" },
@@ -238,22 +235,22 @@ export default function HeroSection() {
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 {item.text === "X (Twitter) Coverage" ? (
-                  <div className="bg-white rounded-t-lg p-2 mb-4 mt-4">
+                  <div className="bg-white rounded-t-lg p-2 mb-2 md:mb-4 mt-2 md:mt-4">
                     <img
                       src={item.image}
                       alt={item.text}
-                      className="w-full h-40 object-contain"
+                      className="w-full h-32 md:h-40 object-contain"
                     />
                   </div>
                 ) : (
                   <img
                     src={item.image}
                     alt={item.text}
-                    className="w-full h-40 object-contain rounded-t-lg mb-4 mt-4"
+                    className="w-full h-32 md:h-40 object-contain rounded-t-lg mb-2 md:mb-4 mt-2 md:mt-4"
                   />
                 )}
-                <div className="p-8">
-                  <p className="text-lg font-poppins text-black">{item.icon} {item.text}</p>
+                <div className="p-4 md:p-8">
+                  <p className="text-sm md:text-lg font-poppins text-black">{item.icon} {item.text}</p>
                 </div>
               </a>
             ))}
@@ -262,12 +259,12 @@ export default function HeroSection() {
       </section>
 
       {/* What Parents Are Saying */}
-      <section id="reviews" className="py-16 bg-white">
+      <section id="reviews" className="py-8 md:py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h1 className="text-8xl md:text-6xl font-bold mb-4 text-[#394b35] font-poppins">What Parents Are Saying</h1>
+          <div className="text-center mb-6 md:mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#394b35] font-poppins leading-tight">What Parents Are Saying</h1>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {reviews.map((review, index) => {
               const isFlipped = expanded === index;
               const truncatedText = review.text.split('\n\n')[0] || review.text.substring(0, 150) + '...';
@@ -281,29 +278,29 @@ export default function HeroSection() {
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
                       <div className="flex items-center mb-2">
-                        <h3 className="text-lg font-semibold font-poppins text-black flex-grow">{review.name}</h3>
+                        <h3 className="text-sm md:text-lg font-semibold font-poppins text-black flex-grow">{review.name}</h3>
                         <div className="flex ml-auto">
                           {[...Array(5)].map((_, i) => (
                             <IoStar
                               key={i}
-                              className={`text-sm ${i < review.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
+                              className={`text-xs md:text-sm ${i < review.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
                             />
                           ))}
                         </div>
                       </div>
-                      <p className="text-sm text-gray-500 mb-2">Reviewed on {review.date}</p>
-                      <p className="text-base font-poppins text-black mb-4 flex-grow overflow-hidden">
+                      <p className="text-xs md:text-sm text-gray-500 mb-2">Reviewed on {review.date}</p>
+                      <p className="text-sm md:text-base font-poppins text-black mb-4 flex-grow overflow-hidden">
                         {truncatedText}
                       </p>
                     </div>
                     <div className="flip-card-back">
-                      <div className="flex flex-col justify-center items-center h-full p-4">
-                        <h3 className="text-xl font-bold text-[#394b35] mb-4 text-center">Inspired? Get Your Copy!</h3>
+                      <div className="flex flex-col justify-center items-center h-full p-2 md:p-4">
+                        <h3 className="text-lg md:text-xl font-bold text-[#394b35] mb-2 md:mb-4 text-center">Inspired? Get Your Copy!</h3>
                         <a
                           href="https://www.amazon.in/dp/9349999366"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-[#fafbe5]/70 text-black text-lg font-semibold py-4 px-6 rounded-lg shadow-lg hover:bg-[#f0f1e0]/70 transition duration-300"
+                          className="bg-[#fafbe5]/70 text-black text-sm md:text-lg font-semibold py-2 md:py-4 px-3 md:px-6 rounded-lg shadow-lg hover:bg-[#f0f1e0]/70 transition duration-300"
                         >
                           🛒 Buy on Amazon
                         </a>
@@ -318,41 +315,41 @@ export default function HeroSection() {
       </section>
 
       {/* Call to Action Section */}
-      <section id="contact" className="py-16 bg-[#e5e6d0]">
+      <section id="contact" className="py-8 md:py-16 bg-[#e5e6d0]">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap items-center">
-            <div className="w-full md:w-1/2 text-center md:text-left">
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+            <div className="w-full md:w-1/2 text-center md:text-left order-1">
               <img
                 src="/assets/img/contact.jpg"
                 alt="Parenting Journey"
-                className="w-full h-80 object-contain rounded-lg mb-4 -ml-25 -mt-3"
+                className="w-full max-w-[200px] md:max-w-[400px] h-auto object-contain rounded-lg mb-4 mx-auto md:mx-0"
               />
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#394b35] font-poppins">Your Parenting Journey Starts Here</h2>
-              <p className="text-lg md:text-xl mb-8 text-black font-poppins">Build a strong, connected foundation for your child’s future - one mindful moment at a time.</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-[#394b35] font-poppins leading-tight">Your Parenting Journey Starts Here</h2>
+              <p className="text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-black font-poppins leading-relaxed">Build a strong, connected foundation for your child's future - one mindful moment at a time.</p>
               <a
                 href="https://www.amazon.in/dp/9349999366"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#fafbe5]/70 text-black text-xl font-bold py-6 px-8 rounded-lg shadow-lg hover:bg-[#f0f1e0]/70 transition duration-300 inline-block"
+                className="bg-[#fafbe5]/70 text-black text-lg md:text-xl font-bold py-4 md:py-6 px-6 md:px-8 rounded-lg shadow-lg hover:bg-[#f0f1e0]/70 transition duration-300 inline-block"
               >
                 📚 Buy on Amazon Now
               </a>
             </div>
-            <div className="w-full md:w-1/2 mt-8 md:mt-0">
-              <h3 className="text-2xl font-bold mb-4 text-[#394b35] font-poppins">Bulk Purchase for Organizations</h3>
-              <p className="text-base mb-6 text-black font-poppins">Looking to empower a larger community of parents, educators, or organizations? The Toddlers’ Way: A Panda’s Parenting Guide is available for bulk purchases!</p>
-              <p className="text-sm mb-4 text-black font-poppins">Upto 10 copies - Rs. 469 / copy. Above 10 copies - Rs 400 / copy</p>
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h4 className="text-lg font-semibold mb-4 text-[#394b35] font-poppins">Place Your Order</h4>
-                <form className="space-y-4">
-                  <input type="text" placeholder="Name" className="w-full p-3 border border-gray-300 rounded-lg text-black" required />
-                  <input type="tel" placeholder="Phone number" className="w-full p-3 border border-gray-300 rounded-lg text-black" required />
-                  <input type="email" placeholder="Email" className="w-full p-3 border border-gray-300 rounded-lg text-black" required />
-                  <input type="text" placeholder="Organization" className="w-full p-3 border border-gray-300 rounded-lg text-black" required />
-                  <input type="text" placeholder="Designation" className="w-full p-3 border border-gray-300 rounded-lg text-black" required />
-                  <input type="number" placeholder="Number of copies" className="w-full p-3 border border-gray-300 rounded-lg text-black" min="1" required />
-                  <textarea placeholder="Shipping address" className="w-full p-3 border border-gray-300 rounded-lg text-black" rows="3" required></textarea>
-                  <button type="submit" className="w-full bg-[#394b35] text-white text-lg font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-[#2d3a2a] transition duration-300">
+            <div className="w-full md:w-1/2 order-2">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 text-[#394b35] font-poppins">Bulk Purchase for Organizations</h3>
+              <p className="text-sm md:text-base mb-4 md:mb-6 text-black font-poppins leading-relaxed">Looking to empower a larger community of parents, educators, or organizations? The Toddlers' Way: A Panda's Parenting Guide is available for bulk purchases!</p>
+              <p className="text-xs md:text-sm mb-4 text-black font-poppins">Upto 10 copies - Rs. 469 / copy. Above 10 copies - Rs 400 / copy</p>
+              <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg">
+                <h4 className="text-base md:text-lg font-semibold mb-3 md:mb-4 text-[#394b35] font-poppins">Place Your Order</h4>
+                <form className="space-y-3 md:space-y-4">
+                  <input type="text" placeholder="Name" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" required />
+                  <input type="tel" placeholder="Phone number" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" required />
+                  <input type="email" placeholder="Email" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" required />
+                  <input type="text" placeholder="Organization" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" required />
+                  <input type="text" placeholder="Designation" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" required />
+                  <input type="number" placeholder="Number of copies" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" min="1" required />
+                  <textarea placeholder="Shipping address" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" rows="3" required></textarea>
+                  <button type="submit" className="w-full bg-[#394b35] text-white text-sm md:text-lg font-bold py-2 md:py-3 px-4 md:px-6 rounded-lg shadow-lg hover:bg-[#2d3a2a] transition duration-300">
                     Confirm / Submit
                   </button>
                 </form>
@@ -363,51 +360,51 @@ export default function HeroSection() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#394b35] text-white py-16">
+      <footer className="bg-[#394b35] text-white py-8 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {/* Social Links */}
             <div>
-              <h3 className="text-xl font-bold mb-4">Follow Us</h3>
+              <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Follow Us</h3>
               <div className="space-y-2">
-                <a href="#" className="block hover:text-[#e5e6d0] transition">Instagram</a>
-                <a href="https://www.amazon.in/dp/9349999366" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition">Amazon</a>
+                <a href="#" className="block hover:text-[#e5e6d0] transition text-sm md:text-base">Instagram</a>
+                <a href="https://www.amazon.in/dp/9349999366" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-sm md:text-base">Amazon</a>
               </div>
             </div>
             {/* News Links */}
             <div>
-              <h3 className="text-xl font-bold mb-4">In the News</h3>
+              <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">In the News</h3>
               <div className="space-y-2">
-                <a href="https://ardorcomm-media.com/the-toddlers-way-a-pandas-parenting-guide-by-dr-chandrashekar-and-mrs-saviola-lobo-launched-in-hyderabad/" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-sm">ArdorComm Media</a>
-                <a href="https://indiglobalmedia.com/the-toddlers-way-a-pandas-parenting-guide-launched-in-hyderabad-sparks-dialogue-on-nurturing-future-leaders/" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-sm">IndiGlobal Media</a>
-                <a href="https://youtube.com/shorts/o53y40jOf4g?si=wLwF0oFq4WBExEwf" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-sm">YouTube</a>
-                <a href="https://x.com/IndiglobalMedia/status/1963118838691610891" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-sm">X (Twitter)</a>
+                <a href="https://ardorcomm-media.com/the-toddlers-way-a-pandas-parenting-guide-by-dr-chandrashekar-and-mrs-saviola-lobo-launched-in-hyderabad/" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-xs md:text-sm">ArdorComm Media</a>
+                <a href="https://indiglobalmedia.com/the-toddlers-way-a-pandas-parenting-guide-launched-in-hyderabad-sparks-dialogue-on-nurturing-future-leaders/" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-xs md:text-sm">IndiGlobal Media</a>
+                <a href="https://youtube.com/shorts/o53y40jOf4g?si=wLwF0oFq4WBExEwf" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-xs md:text-sm">YouTube</a>
+                <a href="https://x.com/IndiglobalMedia/status/1963118838691610891" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-xs md:text-sm">X (Twitter)</a>
               </div>
             </div>
             {/* Contact Info */}
             <div>
-              <h3 className="text-xl font-bold mb-4">Contact Us</h3>
+              <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Contact Us</h3>
               <div className="space-y-2">
-                <p>📞 Phone: +91 12345 67890</p>
-                <p>✉️ Email: info@pandaswisdom.com</p>
-                <p>📍 Address: Hyderabad, India</p>
+                <p className="text-sm md:text-base">📞 Phone: +91 12345 67890</p>
+                <p className="text-sm md:text-base">✉️ Email: info@pandaswisdom.com</p>
+                <p className="text-sm md:text-base">📍 Address: Hyderabad, India</p>
               </div>
             </div>
             {/* Reach Out Form */}
             <div>
-              <h3 className="text-xl font-bold mb-4">Reach Out</h3>
-              <form className="space-y-4">
-                <input type="text" placeholder="Name" className="w-full p-2 border border-gray-300 rounded text-white" required />
-                <input type="email" placeholder="Email" className="w-full p-2 border border-gray-300 rounded text-white" required />
-                <textarea placeholder="Message" className="w-full p-2 border border-gray-300 rounded text-white" rows="3" required></textarea>
-                <button type="submit" className="w-full bg-[#e5e6d0] text-[#394b35] font-bold py-2 px-4 rounded hover:bg-[#d4d5c0] transition">
+              <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Reach Out</h3>
+              <form className="space-y-3 md:space-y-4">
+                <input type="text" placeholder="Name" className="w-full p-2 md:p-2 border border-gray-300 rounded text-white text-sm md:text-base" required />
+                <input type="email" placeholder="Email" className="w-full p-2 md:p-2 border border-gray-300 rounded text-white text-sm md:text-base" required />
+                <textarea placeholder="Message" className="w-full p-2 md:p-2 border border-gray-300 rounded text-white text-sm md:text-base" rows="3" required></textarea>
+                <button type="submit" className="w-full bg-[#e5e6d0] text-[#394b35] font-bold py-2 px-4 rounded hover:bg-[#d4d5c0] transition text-sm md:text-base">
                   Send Message
                 </button>
               </form>
             </div>
           </div>
-          <div className="text-center mt-8 border-t border-[#e5e6d0] pt-8">
-            <p>&copy; 2025 The Toddlers’ Way. All rights reserved.</p>
+          <div className="text-center mt-6 md:mt-8 border-t border-[#e5e6d0] pt-6 md:pt-8">
+            <p className="text-sm md:text-base">&copy; 2025 The Toddlers' Way. All rights reserved.</p>
           </div>
         </div>
       </footer>
@@ -428,59 +425,53 @@ function ImageSlider() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const numVisible = 3;
-  const allImages = [...images, ...images]; // Duplicate for seamless loop
-  const totalPositions = allImages.length;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % totalPositions);
-    }, 3000); // Auto slide by 1 every 3 seconds
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
 
     return () => clearInterval(interval);
-  }, [totalPositions]);
+  }, [images.length]);
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % totalPositions);
+    setCurrentIndex((prev) => (prev + 1) % images.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + totalPositions) % totalPositions);
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
-  const slideWidth = 100 / numVisible;
-
   return (
-    <div className="relative w-full max-w-6xl mx-auto overflow-hidden">
-      <div
-        className="flex gap-4 transition-transform duration-1000 ease-in-out"
-        style={{
-          width: `${allImages.length * slideWidth}%`,
-          transform: `translateX(-${currentIndex * slideWidth}%)`
-        }}
-      >
-        {allImages.map((src, index) => (
-          <div
-            key={index}
-            className="flex-1 aspect-square bg-white rounded-lg shadow-md overflow-hidden"
-          >
-            <img
-              src={src}
-              alt={`Launch Image ${index + 1}`}
-              className="w-full h-full object-cover transition-all duration-1000 ease-in-out"
-            />
-          </div>
-        ))}
+    <div className="relative w-full max-w-6xl mx-auto">
+      <div className="flex gap-2 md:gap-4 overflow-hidden">
+        {/* Show 1 image on mobile, 3 on desktop */}
+        {[0, 1, 2].map((offset) => {
+          const imageIndex = (currentIndex + offset) % images.length;
+          return (
+            <div
+              key={offset}
+              className={`${offset === 1 ? 'hidden md:block' : ''} ${offset === 2 ? 'hidden md:block' : ''} flex-1 aspect-square bg-white rounded-lg shadow-md overflow-hidden`}
+            >
+              <img
+                src={images[imageIndex]}
+                alt={`Launch Image ${imageIndex + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          );
+        })}
       </div>
+      
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition"
+        className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-1 md:p-2 rounded-full hover:bg-opacity-75 transition text-sm md:text-base"
       >
         ‹
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition"
+        className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-1 md:p-2 rounded-full hover:bg-opacity-75 transition text-sm md:text-base"
       >
         ›
       </button>
