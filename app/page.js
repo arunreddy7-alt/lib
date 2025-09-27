@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import React, { useState, useEffect } from "react";
 import { IoNewspaperOutline, IoMegaphoneOutline, IoPhonePortrait, IoBriefcase, IoStar, IoClose } from 'react-icons/io5';
@@ -14,7 +15,7 @@ export default function HeroSection() {
       name: "Shreya Yadav",
       rating: 5,
       date: "15 September 2025",
-      text: "As a practitioner who sees children daily, The Toddlers' Way spoke to me at a much more profound level than boundaries of motherhood. This book perfectly cross-connects scientific understanding with everyday practicality. PEARL philosophy—Play, Explore, and Learn—brought back memories of my teacher training."    
+      text: "As a practitioner who sees children daily, The Toddlers&apos; Way spoke to me at a much more profound level than boundaries of motherhood. This book perfectly cross-connects scientific understanding with everyday practicality. PEARL philosophy—Play, Explore, and Learn—brought back memories of my teacher training."
       },
     {
       name: "Samridhi",
@@ -136,7 +137,7 @@ export default function HeroSection() {
               {/* Left Side */}
               <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left text-[#394b35]">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-                  "Discover the Panda's Wisdom for Peaceful Parenting"
+                  &ldquo;Discover the Panda&apos;s Wisdom for Peaceful Parenting&rdquo;
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl mb-6 leading-relaxed">
                   An evidence-based roadmap to nurture your child's first 2000 days with mindfulness, connection, and love.
