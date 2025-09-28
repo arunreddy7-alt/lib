@@ -111,7 +111,7 @@ export default function HeroSection() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white focus:outline-none p-2"
+            className={`md:hidden focus:outline-none p-2 transition-colors duration-300 ${scrolled ? 'text-black' : 'text-white'}`}
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? "✕" : "☰"}
@@ -120,13 +120,13 @@ export default function HeroSection() {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-sm px-6 py-4 flex flex-col gap-4 text-[#394b35] shadow-lg">
-            <a href="#home" className="hover:text-[#394b35] py-2" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#home'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Home</a>
-            <a href="#about" className="hover:text-[#394b35] py-2" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#about'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>About</a>
-            <a href="#authors" className="hover:text-[#394b35] py-2" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#authors'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Authors</a>
-            <a href="#gallery" className="hover:text-[#394b35] py-2" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#gallery'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Gallery</a>
-            <a href="#reviews" className="hover:text-[#394b35] py-2" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#reviews'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Reviews</a>
-            <a href="#contact" className="hover:text-[#394b35] py-2" onClick={(e) => { e.preventDefault(); const target = document.querySelector('#contact'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Contact</a>
+          <div className={`md:hidden backdrop-blur-sm px-6 py-4 flex flex-col gap-4 shadow-lg ${scrolled ? 'bg-black/95 text-white' : 'bg-white/95 text-[#394b35]'}`}>
+            <a href="#home" className={`py-2 transition-colors ${scrolled ? 'hover:text-gray-300' : 'hover:text-[#394b35]'}`} onClick={(e) => { e.preventDefault(); const target = document.querySelector('#home'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Home</a>
+            <a href="#about" className={`py-2 transition-colors ${scrolled ? 'hover:text-gray-300' : 'hover:text-[#394b35]'}`} onClick={(e) => { e.preventDefault(); const target = document.querySelector('#about'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>About</a>
+            <a href="#authors" className={`py-2 transition-colors ${scrolled ? 'hover:text-gray-300' : 'hover:text-[#394b35]'}`} onClick={(e) => { e.preventDefault(); const target = document.querySelector('#authors'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Authors</a>
+            <a href="#gallery" className={`py-2 transition-colors ${scrolled ? 'hover:text-gray-300' : 'hover:text-[#394b35]'}`} onClick={(e) => { e.preventDefault(); const target = document.querySelector('#gallery'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Gallery</a>
+            <a href="#reviews" className={`py-2 transition-colors ${scrolled ? 'hover:text-gray-300' : 'hover:text-[#394b35]'}`} onClick={(e) => { e.preventDefault(); const target = document.querySelector('#reviews'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Reviews</a>
+            <a href="#contact" className={`py-2 transition-colors ${scrolled ? 'hover:text-gray-300' : 'hover:text-[#394b35]'}`} onClick={(e) => { e.preventDefault(); const target = document.querySelector('#contact'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Contact</a>
           </div>
         )}
       </nav>
@@ -244,9 +244,9 @@ export default function HeroSection() {
       {/* Glimpses from the Launch */}
       <section id="gallery" className="py-8 md:py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center mb-6 md:mb-8 scroll-animate opacity-0">
-            <img src="/assets/img/panda.png" alt="Creative Icon" className="w-12 h-12 sm:w-16 sm:h-16 md:w-50 md:h-50 mr-4 -ml-10 object-cover" />
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#394b35] font-poppins leading-tight">Glimpses from the Launch</h1>
+          <div className="flex flex-row items-center justify-center mb-6 md:mb-8 scroll-animate opacity-0">
+            <img src="/assets/img/panda2.png" alt="Creative Icon" className="w-10 h-10 sm:w-12 sm:h-12 md:w-50 md:h-50 mr-2 sm:mr-4 sm:-ml-10 object-cover" />
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 text-[#394b35] font-poppins leading-tight text-center px-2">Glimpses from the Launch</h1>
           </div>
           <p className="text-base md:text-lg mb-6 font-poppins text-black scroll-animate opacity-0 text-center">Celebrating the launch of The Toddlers' Way with parents, educators, and thought leaders!</p>
           <div className="flex justify-center scroll-animate opacity-0">
