@@ -133,13 +133,14 @@ export default function HeroSection() {
 
       <section id="home" className="relative">
         {/* Hero Section */}
-        <div className="relative h-[700px] md:h-[900px]">
+        <div className="relative h-[600px] sm:h-[700px] md:h-[800px] lg:h-[900px]">
           {/* Background Image - Fill till wave */}
           <div
             className="absolute top-0 left-0 right-0"
             style={{
               background: "url('/assets/img/slider-bg-1.jpg') no-repeat center center",
               backgroundSize: "cover",
+              backgroundPosition: "center center",
               opacity: 1,
               height: "calc(100% - 40px)",
               zIndex: -1,
@@ -165,7 +166,7 @@ export default function HeroSection() {
           </div>
 
           {/* Content Container */}
-          <div className="container mx-auto relative z-10 pt-64 md:pt-64 pb-12 md:pb-20 px-4">
+          <div className="container mx-auto relative z-10 pt-32 sm:pt-48 md:pt-64 pb-12 md:pb-20 px-4">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 opacity-0 animate-fade-in-up">
               {/* Left Side */}
               <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left text-[#fafbe5]">
@@ -197,25 +198,27 @@ export default function HeroSection() {
       </section>
       {/*about us*/}
       <section id="about" className="py-8 md:py-16 bg-gray-50 -mt-16 md:-mt-10">
-        <div className="container mx-auto px-4 pt-20 md:pt-0">
-          <div className="flex items-center justify-center mb-6 md:mb-8 scroll-animate opacity-0">
-            <img src="/assets/img/panda.png" alt="Creative Icon" className="w-50 h-50 mr-4 -ml-10 object-cover" />
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#394b35] font-poppins leading-tight text-center">The Toddlers' Way: Your Parenting Compass</h1>
+        <div className="container mx-auto px-4 pt-48 md:pt-0">
+          <div className="flex flex-row items-center justify-center mb-12 md:mb-8 scroll-animate opacity-0">
+            <img src="/assets/img/panda.png" alt="Creative Icon" className="w-12 h-12 sm:w-16 sm:h-16 md:w-50 md:h-50 mr-3 sm:mr-4 object-cover" />
+            <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#394b35] font-poppins leading-tight text-center px-2">The Toddlers' Way: Your Parenting Compass</h1>
           </div>
-          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
-            <div className="w-full md:w-1/2 order-2 md:order-1 scroll-animate opacity-0">
-              <p className="text-base md:text-lg mb-4 md:mb-6 font-poppins text-black leading-relaxed">Modern parenting can feel overwhelming, with endless advice and constant self-doubt. The Toddlers' Way: A Panda's Parenting Guide offers a simple, evidence-based roadmap for your child's first 2000 days - the most crucial years for brain growth.</p>
-              <p className="text-base md:text-lg mb-4 md:mb-6 font-poppins text-black leading-relaxed">Inspired by the calm wisdom of the panda, this book provides practical strategies to build a secure, loving foundation, turn everyday moments into growth opportunities, and navigate challenges from picky eating to bedtime battles.</p>
-              <p className="text-base md:text-lg mb-4 md:mb-6 font-poppins text-black leading-relaxed">Stop striving for perfection; embrace mindful parenting for a happier family life and a lasting legacy of love.</p>
-              <a
-                href="https://www.amazon.in/dp/9349999366"
-                className="bg-[#fafbe5]/70 text-black text-sm font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-[#f0f1e0]/70 transition duration-300 inline-block mt-4"
-              >
-                🛒 Get Your Copy on Amazon
-              </a>
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-8 lg:gap-12 mt-8 md:mt-0">
+            <div className="w-full md:w-1/2 order-2 md:order-1 scroll-animate opacity-0 mt-8 md:mt-0">
+              <p className="text-sm sm:text-base md:text-lg mb-4 md:mb-6 font-poppins text-black leading-relaxed px-2 sm:px-0">Modern parenting can feel overwhelming, with endless advice and constant self-doubt. The Toddlers' Way: A Panda's Parenting Guide offers a simple, evidence-based roadmap for your child's first 2000 days - the most crucial years for brain growth.</p>
+              <p className="text-sm sm:text-base md:text-lg mb-4 md:mb-6 font-poppins text-black leading-relaxed px-2 sm:px-0">Inspired by the calm wisdom of the panda, this book provides practical strategies to build a secure, loving foundation, turn everyday moments into growth opportunities, and navigate challenges from picky eating to bedtime battles.</p>
+              <p className="text-sm sm:text-base md:text-lg mb-4 md:mb-6 font-poppins text-black leading-relaxed px-2 sm:px-0">Stop striving for perfection; embrace mindful parenting for a happier family life and a lasting legacy of love.</p>
+              <div className="text-center md:text-left px-2 sm:px-0">
+                <a
+                  href="https://www.amazon.in/dp/9349999366"
+                  className="bg-[#fafbe5]/70 text-black text-xs sm:text-sm font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-lg hover:bg-[#f0f1e0]/70 transition duration-300 inline-block mt-4"
+                >
+                  🛒 Get Your Copy on Amazon
+                </a>
+              </div>
             </div>
-            <div className="w-full md:w-1/2 text-center order-1 md:order-2 scroll-animate opacity-0">
-              <img src="/assets/img/about.jpg" alt="Book" className="mx-auto rounded-lg shadow-lg w-full max-w-[300px] md:max-w-[400px] h-auto" />
+            <div className="w-full md:w-1/2 text-center order-1 md:order-2 scroll-animate opacity-0 px-2 sm:px-0">
+              <img src="/assets/img/about.jpg" alt="Book" className="mx-auto rounded-lg shadow-lg w-full max-w-[250px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[450px] h-auto" />
             </div>
           </div>
         </div>
@@ -242,7 +245,7 @@ export default function HeroSection() {
       <section id="gallery" className="py-8 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center mb-6 md:mb-8 scroll-animate opacity-0">
-            <img src="/assets/img/panda.png" alt="Creative Icon" className="w-50 h-50 mr-4 -ml-10 object-cover" />
+            <img src="/assets/img/panda.png" alt="Creative Icon" className="w-12 h-12 sm:w-16 sm:h-16 md:w-50 md:h-50 mr-4 -ml-10 object-cover" />
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#394b35] font-poppins leading-tight">Glimpses from the Launch</h1>
           </div>
           <p className="text-base md:text-lg mb-6 font-poppins text-black scroll-animate opacity-0 text-center">Celebrating the launch of The Toddlers' Way with parents, educators, and thought leaders!</p>
