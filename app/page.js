@@ -246,7 +246,6 @@ export default function HeroSection() {
         <div className="container mx-auto px-4">
           <div className="flex flex-row items-center justify-center mb-6 md:mb-8 scroll-animate opacity-0">
             <img src="/assets/img/panda2.png" alt="Creative Icon" className="w-10 h-10 sm:w-12 sm:h-12 md:w-50 md:h-50 mr-2 sm:mr-4 sm:-ml-10 object-cover" />
-            <img src="/assets/img/panda.png" alt="Creative Icon" className="w-10 h-10 sm:w-12 sm:h-12 md:w-50 md:h-50 mr-2 sm:mr-4 sm:-ml-10 object-cover" />
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 text-[#394b35] font-poppins leading-tight text-center px-2">Glimpses from the Launch</h1>
           </div>
           <p className="text-base md:text-lg mb-6 font-poppins text-black scroll-animate opacity-0 text-center">Celebrating the launch of The Toddlers' Way with parents, educators, and thought leaders!</p>
