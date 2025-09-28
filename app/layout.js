@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import Image from "next/image";
 import "./globals.css";
 
 const geistSans = Geist({
