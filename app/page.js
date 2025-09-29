@@ -6,11 +6,14 @@ import { BsCameraVideo, BsCart } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaAmazon } from 'react-icons/fa';
 
+import emailjs from '@emailjs/browser';
+
 export default function HeroSection() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [expanded, setExpanded] = useState(null);
   const [bookLoaded, setBookLoaded] = useState(false);
+  const [formStatus, setFormStatus] = useState(null);
 
   const reviews = [
     {
@@ -85,6 +88,18 @@ export default function HeroSection() {
 
     return () => observer.disconnect();
   }, []);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setFormStatus(null);
+    emailjs.sendForm('service_sutkimm', 'template_4wywz9u', e.target, 'L3S76D8JAJMIEGFzp')
+      .then((result) => {
+          setFormStatus('SUCCESS');
+          e.target.reset();
+      }, (error) => {
+          setFormStatus('FAILED');
+      });
+  };
 
   return (
     <>
@@ -339,18 +354,20 @@ export default function HeroSection() {
               <p className="text-xs md:text-sm mb-4 text-black font-poppins">Upto 10 copies - Rs. 469 / copy. Above 10 copies - Rs 400 / copy</p>
               <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg">
                 <h4 className="text-base md:text-lg font-semibold mb-3 md:mb-4 text-[#394b35] font-poppins">Place Your Order</h4>
-                <form className="space-y-3 md:space-y-4">
-                  <input type="text" placeholder="Name" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" required />
-                  <input type="tel" placeholder="Phone number" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" required />
-                  <input type="email" placeholder="Email" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" required />
-                  <input type="text" placeholder="Organization" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" required />
-                  <input type="text" placeholder="Designation" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" required />
-                  <input type="number" placeholder="Number of copies" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" min="1" required />
-                  <textarea placeholder="Shipping address" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" rows="3" required></textarea>
+                <form className="space-y-3 md:space-y-4" onSubmit={sendEmail}>
+                  <input type="text" name="name" placeholder="Name" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" required />
+                  <input type="tel" name="phone" placeholder="Phone number" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" required />
+                  <input type="email" name="email" placeholder="Email" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" required />
+                  <input type="text" name="organization" placeholder="Organization" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" required />
+                  <input type="text" name="designation" placeholder="Designation" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" required />
+                  <input type="number" name="copies" placeholder="Number of copies" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" min="1" required />
+                  <textarea name="address" placeholder="Shipping address" className="w-full p-2 md:p-3 border border-gray-300 rounded-lg text-black text-sm md:text-base" rows="3" required></textarea>
                   <button type="submit" className="w-full bg-[#394b35] text-white text-sm md:text-lg font-bold py-2 md:py-3 px-4 md:px-6 rounded-lg shadow-lg hover:bg-[#2d3a2a] transition duration-300">
                     Confirm / Submit
                   </button>
                 </form>
+                {formStatus === 'SUCCESS' && <p className="text-green-600 mt-2">Thank you! Your order has been sent.</p>}
+                {formStatus === 'FAILED' && <p className="text-red-600 mt-2">Oops! Something went wrong. Please try again.</p>}
               </div>
             </div>
           </div>
@@ -437,14 +454,16 @@ export default function HeroSection() {
             {/* Reach Out Form */}
             <div className="scroll-animate opacity-0">
               <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Reach Out</h3>
-              <form className="space-y-3 md:space-y-4">
-                <input type="text" placeholder="Name" className="w-full p-2 md:p-2 border border-gray-300 rounded text-white text-sm md:text-base" required />
-                <input type="email" placeholder="Email" className="w-full p-2 md:p-2 border border-gray-300 rounded text-white text-sm md:text-base" required />
-                <textarea placeholder="Message" className="w-full p-2 md:p-2 border border-gray-300 rounded text-white text-sm md:text-base" rows="3" required></textarea>
+              <form className="space-y-3 md:space-y-4" onSubmit={sendEmail}>
+                <input type="text" name="name" placeholder="Name" className="w-full p-2 md:p-2 border border-gray-300 rounded text-white text-sm md:text-base" required />
+                <input type="email" name="email" placeholder="Email" className="w-full p-2 md:p-2 border border-gray-300 rounded text-white text-sm md:text-base" required />
+                <textarea name="message" placeholder="Message" className="w-full p-2 md:p-2 border border-gray-300 rounded text-white text-sm md:text-base" rows="3" required></textarea>
                 <button type="submit" className="w-full bg-[#e5e6d0] text-[#394b35] font-bold py-2 px-4 rounded hover:bg-[#d4d5c0] transition text-sm md:text-base">
                   Send Message
                 </button>
               </form>
+              {formStatus === 'SUCCESS' && <p className="text-green-600 mt-2">Thank you! Your message has been sent.</p>}
+              {formStatus === 'FAILED' && <p className="text-red-600 mt-2">Oops! Something went wrong. Please try again.</p>}
             </div>
           </div>
           <div className="text-center mt-6 md:mt-8 border-t border-[#e5e6d0] pt-6 md:pt-8 scroll-animate opacity-0">
