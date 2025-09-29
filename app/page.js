@@ -200,7 +200,7 @@ export default function HeroSection() {
       <section id="about" className="py-8 md:py-16 bg-gray-50 -mt-16 md:-mt-10">
         <div className="container mx-auto px-4 pt-48 md:pt-0">
           <div className="flex flex-row items-center justify-center mb-12 md:mb-8 scroll-animate opacity-0">
-            <img src="/assets/img/panda.png" alt="Creative Icon" className="w-12 h-12 sm:w-16 sm:h-16 md:w-50 md:h-50 mr-3 sm:mr-4 object-cover translate-x-10 sm:translate-x-0" />
+            <img src="/assets/img/panda.png" alt="Creative Icon" className="w-12 h-12 sm:w-16 sm:h-16 md:w-50 md:h-50 mr-1 sm:mr-4 object-cover translate-x-5 sm:translate-x-0" />
             <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#394b35] font-poppins leading-tight text-center px-2 -translate-x-5 sm:translate-x-0">The Toddlers' Way: Your Parenting Compass</h1>
           </div>
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-8 lg:gap-12 mt-8 md:mt-0">
@@ -245,7 +245,7 @@ export default function HeroSection() {
       <section id="launch" className="py-8 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-row items-center justify-center mb-6 md:mb-8 scroll-animate opacity-0">
-            <img src="/assets/img/panda2.png" alt="Creative Icon" className="w-10 h-10 sm:w-12 sm:h-12 md:w-50 md:h-50 mr-2 sm:mr-4 sm:-ml-10 object-cover" />
+            <img src="/assets/img/panda2.png" alt="Creative Icon" className="w-16 h-16 sm:w-12 sm:h-12 md:w-50 md:h-50 mr-1 sm:mr-4 sm:-ml-10 object-cover" />
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mt-4 mb-4 text-[#394b35] font-poppins leading-tight text-center px-2 -translate-x-2 sm:translate-x-3">Glimpses from the Launch</h1>
           </div>
           <p className="text-base md:text-lg mb-6 font-poppins text-black scroll-animate opacity-0 text-center">Celebrating the launch of The Toddlers' Way with parents, educators, and thought leaders!</p>
@@ -364,7 +364,7 @@ export default function HeroSection() {
             {/* Social Links */}
             <div className="scroll-animate opacity-0">
               <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Follow Us</h3>
-              <div className="flex justify-center gap-4 -ml-64 md:-ml-37">
+              <div className="flex justify-start md:justify-center gap-4 md:-ml-37">
                 <a href="https://www.instagram.com/csk_speaks?igsh=cmtpbGl4d3pidDNr" className="hover:text-[#e5e6d0] transition text-sm md:text-base"><IoLogoInstagram className="text-2xl" /></a>
                 <a href="https://www.facebook.com/CSKspeaks/" className="hover:text-[#e5e6d0] transition text-sm md:text-base"><IoLogoFacebook className="text-2xl" /></a>
                 <a href="https://www.linkedin.com/in/chandrashekardp/" className="hover:text-[#e5e6d0] transition text-sm md:text-base"><IoLogoLinkedin className="text-2xl" /></a>
