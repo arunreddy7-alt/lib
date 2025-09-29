@@ -255,55 +255,6 @@ export default function HeroSection() {
         </div>
       </section>
 
-      {/* Book Buying Links */}
-      <section id="books" className="py-8 md:py-16 bg-[#e5e6d0]">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center mb-6 md:mb-8 scroll-animate opacity-0">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#394b35] font-poppins leading-tight text-center">Book Buying Links</h1>
-          </div>
-          <p className="text-base md:text-lg mb-6 font-poppins text-black scroll-animate opacity-0 text-center">Discover more books by Dr. Chandrashekar D.P. and Saviola Lobo!</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-            {[
-              {
-                title: "Rightway leader Pocketbook",
-                links: [
-                  { icon: <FaAmazon className="inline mr-2 text-xl" />, text: "Amazon", href: "https://www.amazon.in/dp/9349999366" }
-                ]
-              },
-              {
-                title: "One More Step",
-                links: [
-                  { icon: <FaAmazon className="inline mr-2 text-xl" />, text: "Amazon", href: "https://www.amazon.in/dp/9349999366" },
-                  { icon: <BsCart className="inline mr-2 text-xl" />, text: "Flipkart", href: "https://www.flipkart.com/one-more-step/p/itm667dc887d7cda?pid=9781638325802&affid=editornoti" },
-                  { icon: <IoNewspaperOutline className="inline mr-2 text-xl" />, text: "Notion Press", href: "https://notionpress.com/in/read/one-more-step/" }
-                ]
-              }
-            ].map((book, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg shadow-lg p-4 md:p-8 opacity-0 animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <h5 className="text-lg md:text-xl font-semibold mb-4 text-[#394b35] font-poppins">{book.title}</h5>
-                <div className="space-y-2">
-                  {book.links.map((link, i) => (
-                    <a
-                      key={i}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block hover:text-[#e5e6d0] transition text-sm md:text-base text-black"
-                    >
-                      {link.icon} {link.text}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* What Parents Are Saying */}
       <section id="reviews" className="py-8 md:py-16 bg-white">
         <div className="container mx-auto px-4">
