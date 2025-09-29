@@ -104,7 +104,7 @@ export default function HeroSection() {
             <a href="#home" className="hover:text-[#394b35] transition">Home</a>
             <a href="#about" className="hover:text-[#394b35] transition">About</a>
             <a href="#authors" className="hover:text-[#394b35] transition">Authors</a>
-            <a href="#gallery" className="hover:text-[#394b35] transition">Gallery</a>
+            <a href="#launch" className="hover:text-[#394b35] transition">Launch</a>
             <a href="#reviews" className="hover:text-[#394b35] transition">Reviews</a>
             <a href="#contact" className="hover:text-[#394b35] transition">Contact</a>
           </div>
@@ -124,7 +124,7 @@ export default function HeroSection() {
             <a href="#home" className={`py-2 transition-colors ${scrolled ? 'hover:text-gray-300' : 'hover:text-[#394b35]'}`} onClick={(e) => { e.preventDefault(); const target = document.querySelector('#home'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Home</a>
             <a href="#about" className={`py-2 transition-colors ${scrolled ? 'hover:text-gray-300' : 'hover:text-[#394b35]'}`} onClick={(e) => { e.preventDefault(); const target = document.querySelector('#about'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>About</a>
             <a href="#authors" className={`py-2 transition-colors ${scrolled ? 'hover:text-gray-300' : 'hover:text-[#394b35]'}`} onClick={(e) => { e.preventDefault(); const target = document.querySelector('#authors'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Authors</a>
-            <a href="#gallery" className={`py-2 transition-colors ${scrolled ? 'hover:text-gray-300' : 'hover:text-[#394b35]'}`} onClick={(e) => { e.preventDefault(); const target = document.querySelector('#gallery'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Gallery</a>
+            <a href="#launch" className={`py-2 transition-colors ${scrolled ? 'hover:text-gray-300' : 'hover:text-[#394b35]'}`} onClick={(e) => { e.preventDefault(); const target = document.querySelector('#gallery'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Launch</a>
             <a href="#reviews" className={`py-2 transition-colors ${scrolled ? 'hover:text-gray-300' : 'hover:text-[#394b35]'}`} onClick={(e) => { e.preventDefault(); const target = document.querySelector('#reviews'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Reviews</a>
             <a href="#contact" className={`py-2 transition-colors ${scrolled ? 'hover:text-gray-300' : 'hover:text-[#394b35]'}`} onClick={(e) => { e.preventDefault(); const target = document.querySelector('#contact'); if (target) { target.scrollIntoView({ behavior: 'smooth' }); } setMenuOpen(false); }}>Contact</a>
           </div>
@@ -200,8 +200,8 @@ export default function HeroSection() {
       <section id="about" className="py-8 md:py-16 bg-gray-50 -mt-16 md:-mt-10">
         <div className="container mx-auto px-4 pt-48 md:pt-0">
           <div className="flex flex-row items-center justify-center mb-12 md:mb-8 scroll-animate opacity-0">
-            <img src="/assets/img/panda.png" alt="Creative Icon" className="w-12 h-12 sm:w-16 sm:h-16 md:w-50 md:h-50 mr-3 sm:mr-4 object-cover" />
-            <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#394b35] font-poppins leading-tight text-center px-2">The Toddlers' Way: Your Parenting Compass</h1>
+            <img src="/assets/img/panda.png" alt="Creative Icon" className="w-12 h-12 sm:w-16 sm:h-16 md:w-50 md:h-50 mr-3 sm:mr-4 object-cover translate-x-10 sm:translate-x-0" />
+            <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#394b35] font-poppins leading-tight text-center px-2 -translate-x-5 sm:translate-x-0">The Toddlers' Way: Your Parenting Compass</h1>
           </div>
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-8 lg:gap-12 mt-8 md:mt-0">
             <div className="w-full md:w-1/2 order-2 md:order-1 scroll-animate opacity-0 mt-8 md:mt-0">
@@ -242,11 +242,11 @@ export default function HeroSection() {
       </section>
 
       {/* Glimpses from the Launch */}
-      <section id="gallery" className="py-8 md:py-16 bg-white">
+      <section id="launch" className="py-8 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-row items-center justify-center mb-6 md:mb-8 scroll-animate opacity-0">
             <img src="/assets/img/panda2.png" alt="Creative Icon" className="w-10 h-10 sm:w-12 sm:h-12 md:w-50 md:h-50 mr-2 sm:mr-4 sm:-ml-10 object-cover" />
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 text-[#394b35] font-poppins leading-tight text-center px-2">Glimpses from the Launch</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mt-4 mb-4 text-[#394b35] font-poppins leading-tight text-center px-2 -translate-x-2 sm:translate-x-3">Glimpses from the Launch</h1>
           </div>
           <p className="text-base md:text-lg mb-6 font-poppins text-black scroll-animate opacity-0 text-center">Celebrating the launch of The Toddlers' Way with parents, educators, and thought leaders!</p>
           <div className="flex justify-center scroll-animate opacity-0">
@@ -255,48 +255,50 @@ export default function HeroSection() {
         </div>
       </section>
 
-      {/* In the News */}
-      <section id="news" className="py-8 md:py-16 bg-[#e5e6d0]">
+      {/* Book Buying Links */}
+      <section id="books" className="py-8 md:py-16 bg-[#e5e6d0]">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center mb-6 md:mb-8 scroll-animate opacity-0">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#394b35] font-poppins leading-tight text-center">In the News</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#394b35] font-poppins leading-tight text-center">Book Buying Links</h1>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <p className="text-base md:text-lg mb-6 font-poppins text-black scroll-animate opacity-0 text-center">Discover more books by Dr. Chandrashekar D.P. and Saviola Lobo!</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
             {[
-              { icon: <IoNewspaperOutline className="inline mr-2 text-lg" />, text: "ArdorComm Media – Launch Coverage", link: "https://ardorcomm-media.com/the-toddlers-way-a-pandas-parenting-guide-by-dr-chandrashekar-and-mrs-saviola-lobo-launched-in-hyderabad/", image: "/assets/img/news1.jpg" },
-              { icon: <IoNewspaperOutline className="inline mr-2 text-lg" />, text: "IndiGlobal Media – Future Leaders Dialogue", link: "https://indiglobalmedia.com/the-toddlers-way-a-pandas-parenting-guide-launched-in-hyderabad-sparks-dialogue-on-nurturing-future-leaders/", image: "/assets/img/news2.jpg" },
-              { icon: <BsCameraVideo className="inline mr-2 text-lg" />, text: "YouTube – Book Launch Clip", link: "https://youtube.com/shorts/o53y40jOf4g?si=wLwF0oFq4WBExEwf", image: "/assets/img/news3.jpg" },
-              { icon: <IoMegaphoneOutline className="inline mr-2 text-lg text-black" />, text: "X (Twitter) Coverage", link: "https://x.com/IndiglobalMedia/status/1963118838691610891", image: "/assets/img/news4.jpg" },
-              { icon: <IoPhonePortrait className="inline mr-2 text-lg" />, text: "Facebook Post", link: "https://www.facebook.com/share/p/1DE3B3GsbM/", image: "/assets/img/news5.jpg" },
-              { icon: <IoBriefcase className="inline mr-2 text-lg" />, text: "LinkedIn Article", link: "https://www.linkedin.com/posts/indiglobal-media-network_the-toddlers-way-a-pandas-parenting-guide-activity-7368877820741091330-5z-R?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAFjUAOEB6PYKyVCkYiIelnyYnayO8788zB4&utm_campaign=whatsapp", image: "/assets/img/news6.jpg" }
-            ].map((item, index) => (
-              <a
+              {
+                title: "Rightway leader Pocketbook",
+                links: [
+                  { icon: <FaAmazon className="inline mr-2 text-xl" />, text: "Amazon", href: "https://www.amazon.in/dp/9349999366" }
+                ]
+              },
+              {
+                title: "One More Step",
+                links: [
+                  { icon: <FaAmazon className="inline mr-2 text-xl" />, text: "Amazon", href: "https://www.amazon.in/dp/9349999366" },
+                  { icon: <BsCart className="inline mr-2 text-xl" />, text: "Flipkart", href: "https://www.flipkart.com/one-more-step/p/itm667dc887d7cda?pid=9781638325802&affid=editornoti" },
+                  { icon: <IoNewspaperOutline className="inline mr-2 text-xl" />, text: "Notion Press", href: "https://notionpress.com/in/read/one-more-step/" }
+                ]
+              }
+            ].map((book, index) => (
+              <div
                 key={index}
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer block opacity-0 animate-fade-in-up"
+                className="bg-white rounded-lg shadow-lg p-4 md:p-8 opacity-0 animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                {item.text === "X (Twitter) Coverage" ? (
-                  <div className="bg-white rounded-lg p-2 mb-2 md:mb-4 mt-2 md:mt-4">
-                    <img
-                      src={item.image}
-                      alt={item.text}
-                      className="w-full h-52 md:h-64 object-contain rounded-lg"
-                    />
-                  </div>
-                ) : (
-                  <img
-                    src={item.image}
-                    alt={item.text}
-                    className="w-full h-52 md:h-64 object-contain rounded-lg mb-2 md:mb-4 mt-2 md:mt-4"
-                  />
-                )}
-                <div className="p-4 md:p-8">
-                  <p className="text-sm md:text-lg font-poppins text-black">{item.icon} {item.text}</p>
+                <h5 className="text-lg md:text-xl font-semibold mb-4 text-[#394b35] font-poppins">{book.title}</h5>
+                <div className="space-y-2">
+                  {book.links.map((link, i) => (
+                    <a
+                      key={i}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:text-[#e5e6d0] transition text-sm md:text-base text-black"
+                    >
+                      {link.icon} {link.text}
+                    </a>
+                  ))}
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>
@@ -322,7 +324,7 @@ export default function HeroSection() {
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
                       <div className="flex items-center mb-2">
-                        <img src={index === 2 || index === 3 ? "/assets/img/18033.jpg" : "/assets/img/48063.jpg"} alt="Reviewer" className="w-10 h-10 rounded-full mr-2" />
+                        <img src={index === 2 || index === 3 ? "/assets/img/18033.jpg" : "/assets/img/48063.jpg"} alt="Reviewer" className="w-15 h-15 rounded-full mr-2" />
                         <h3 className="text-sm md:text-lg font-semibold font-poppins text-black flex-grow">{review.name}</h3>
                         <div className="flex ml-auto">
                           {[...Array(5)].map((_, i) => (
@@ -411,48 +413,68 @@ export default function HeroSection() {
             {/* Social Links */}
             <div className="scroll-animate opacity-0">
               <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Follow Us</h3>
-              <div className="flex justify-center gap-4 -ml-37">
+              <div className="flex justify-center gap-4 -ml-64 md:-ml-37">
                 <a href="https://www.instagram.com/csk_speaks?igsh=cmtpbGl4d3pidDNr" className="hover:text-[#e5e6d0] transition text-sm md:text-base"><IoLogoInstagram className="text-2xl" /></a>
                 <a href="https://www.facebook.com/CSKspeaks/" className="hover:text-[#e5e6d0] transition text-sm md:text-base"><IoLogoFacebook className="text-2xl" /></a>
                 <a href="https://www.linkedin.com/in/chandrashekardp/" className="hover:text-[#e5e6d0] transition text-sm md:text-base"><IoLogoLinkedin className="text-2xl" /></a>
                 <a href="https://youtube.com/@cskspeaks?si=tgYwcwR8XKex24KZ" className="hover:text-[#e5e6d0] transition text-sm md:text-base"><IoLogoYoutube className="text-2xl" /></a>
               </div>
-              <h4 className="text-md md:text-lg font-semibold mt-4 mb-2">Buy Book</h4>
+              <h4 className="text-md md:text-lg font-semibold mt-7 mb-2">Buy Book</h4>
               <div className="space-y-2">
                 <a href="https://www.amazon.in/dp/9349999366" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-sm md:text-base"><FaAmazon className="inline mr-2 text-xl" />Amazon</a>
               </div>
-              <h5 className="text-sm md:text-base font-semibold mt-4 mb-2">For More</h5>
+              <h5 className="text-md md:text-lg font-semibold mt-7 mb-2">For More</h5>
               <div className="space-y-2">
                 <a href="https://cskspeaks.com/" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-sm md:text-base">CSK Speaks</a>
               </div>
             </div>
             {/* News Links */}
             <div className="scroll-animate opacity-0">
-              <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">In the News</h3>
-              <div className="space-y-2">
-                <a href="https://ardorcomm-media.com/the-toddlers-way-a-pandas-parenting-guide-by-dr-chandrashekar-and-mrs-saviola-lobo-launched-in-hyderabad/" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-xs md:text-sm">ArdorComm Media</a>
-                <a href="https://indiglobalmedia.com/the-toddlers-way-a-pandas-parenting-guide-launched-in-hyderabad-sparks-dialogue-on-nurturing-future-leaders/" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-xs md:text-sm">IndiGlobal Media</a>
-                <a href="https://youtube.com/shorts/o53y40jOf4g?si=wLwF0oFq4WBExEwf" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-xs md:text-sm">YouTube</a>
-                <a href="https://x.com/IndiglobalMedia/status/1963118838691610891" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-xs md:text-sm">X (Twitter)</a>
-              </div>
-              <h4 className="text-md md:text-lg font-semibold mt-4 mb-2">Book Buying Links</h4>
-              <div className="flex flex-col md:flex-row gap-4">
-                <div className="w-full md:w-1/2">
-                  <h5 className="text-sm md:text-base font-semibold mb-2">Rightway leader Pocketbook</h5>
-                  <div className="space-y-2">
-                    <a href="https://www.amazon.in/dp/9349999366" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-sm md:text-base"><FaAmazon className="inline mr-2 text-xl" />Amazon</a>
-                  </div>
-                </div>
-                <div className="w-full md:w-1/2">
-                  <h5 className="text-sm md:text-base font-semibold mb-2">One More Step</h5>
-                  <div className="space-y-2">
-                    <a href="https://www.amazon.in/dp/9349999366" target="_blank" rel="noopener noreferrer" className="block hover:text-[#e5e6d0] transition text-sm md:text-base"><FaAmazon className="inline mr-2 text-xl" />Amazon</a>
-                    <a href="https://www.flipkart.com/one-more-step/p/itm667dc887d7cda?pid=9781638325802&affid=editornoti" className="block hover:text-[#e5e6d0] transition text-sm md:text-base"><BsCart className="inline mr-2 text-xl" />Flipkart</a>
-                    <a href="https://notionpress.com/in/read/one-more-step/" className="block hover:text-[#e5e6d0] transition text-sm md:text-base"><IoNewspaperOutline className="inline mr-2 text-xl" />Notion Press</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+  <h4 className="text-lg md:text-xl font-semibold -mt-0 mb-2 ml-0 md:-ml-7">Other Publications</h4>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {/* Rightway Leader Pocketbook */}
+    <div className="p-4 rounded-xl -ml-4 md:-ml-20 -mt-4 md:mt-0">
+      <h5 className="text-sm md:text-base font-semibold mb-3">Rightway Leader Pocketbook</h5>
+      <div className="space-y-2">
+        <a
+          href="https://www.amazon.in/dp/9349999366"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 hover:text-[#e5e6d0] transition text-sm md:text-base"
+        >
+          <FaAmazon className="text-xl" /> Amazon
+        </a>
+      </div>
+    </div>
+
+    {/* One More Step */}
+    <div className="p-4 rounded-xl -ml-4 md:-ml-20 -mt-10 md:mt-0">
+      <h5 className="text-sm md:text-base font-semibold mb-3">One More Step</h5>
+      <div className="space-y-2">
+        <a
+          href="https://www.amazon.in/dp/9349999366"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 hover:text-[#e5e6d0] transition text-sm md:text-base"
+        >
+          <FaAmazon className="text-xl" /> Amazon
+        </a>
+        <a
+          href="https://www.flipkart.com/one-more-step/p/itm667dc887d7cda?pid=9781638325802&affid=editornoti"
+          className="flex items-center gap-2 hover:text-[#e5e6d0] transition text-sm md:text-base"
+        >
+          <BsCart className="text-xl" /> Flipkart
+        </a>
+        <a
+          href="https://notionpress.com/in/read/one-more-step/"
+          className="flex items-center gap-2 hover:text-[#e5e6d0] transition text-sm md:text-base"
+        >
+          <IoNewspaperOutline className="text-xl" /> Notion Press</a>
+      </div>
+    </div>
+  </div>
+</div>
+
             {/* Contact Info */}
             <div className="scroll-animate opacity-0">
               <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Contact Us</h3>
