@@ -233,7 +233,7 @@ export default function HeroSection() {
               </div>
             </div>
             <div className="w-full md:w-1/2 text-center order-1 md:order-2 scroll-animate opacity-0 px-2 sm:px-0">
-              <img src="/assets/img/about.jpg" alt="Book" className="mx-auto rounded-lg shadow-lg w-full max-w-[250px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[450px] h-auto" />
+              <img src="/assets/img/about.jpg" alt="Book" className="mx-auto rounded-lg shadow-lg w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] h-auto" />
             </div>
           </div>
         </div>
